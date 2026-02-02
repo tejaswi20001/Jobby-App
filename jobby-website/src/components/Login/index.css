@@ -1,0 +1,164 @@
+/* ✅ Cross-browser baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.login-bg-container {
+  background-color: #000000;
+  min-height: 100vh; /* better than height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px; /* prevents edge touching on mobile */
+}
+
+/* Card */
+.login-card-container {
+  background-color: #272727;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px; /* desktop size */
+  padding: 28px;
+}
+
+/* Logo */
+.jobby-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.jobby-logo {
+  height: 52px;
+  width: auto;
+  max-width: 180px;
+}
+
+/* Form fields */
+.input-container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.label-text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  color: #f8fafc;
+  font-size: 14px;
+  margin: 0;
+}
+
+.input-text {
+  background-color: transparent;
+  border: 1px solid #64748b;
+  border-radius: 6px;
+  height: 44px;
+  width: 100%;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+}
+
+/* ✅ Focus styles (cross browser friendly) */
+.input-text:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  height: 44px;
+  background-color: #6366f1;
+  border: none;
+  border-radius: 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.login-button:hover {
+  opacity: 0.95;
+}
+
+.login-button:active {
+  transform: scale(0.99);
+}
+
+.login-button:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.85);
+  outline-offset: 3px;
+}
+
+/* Error */
+.error-msg {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  color: #ff0b37;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+/* ==========================
+   ✅ Responsive breakpoints
+   ========================== */
+
+/* Mobile */
+@media (max-width: 576px) {
+  .login-bg-container {
+    padding: 16px;
+  }
+
+  .login-card-container {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .jobby-logo {
+    height: 44px;
+  }
+
+  .input-text {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .login-button {
+    height: 42px;
+    font-size: 15px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+  .login-card-container {
+    max-width: 540px;
+    padding: 22px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login-card-container {
+    max-width: 560px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .login-card-container {
+    max-width: 600px; /* if you want bigger on desktop */
+  }
+}

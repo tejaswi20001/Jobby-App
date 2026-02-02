@@ -1,0 +1,199 @@
+/* ✅ Cross-browser baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.jobs-details-container {
+  background-color: #000000;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px;
+  background-size: cover;
+}
+
+/* List wrapper */
+.unorderlist-container {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ✅ Failure view wrapper (add this class in JSX if possible)
+   If you can't add, it's still okay; other styles will apply.
+*/
+.failure-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+/* Failure image responsive */
+.failure-image {
+  width: min(760px, 100%);
+  height: auto;
+  max-width: 100%;
+}
+
+/* Failure text */
+.failure-text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.reason {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f1f5f9;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* Retry button */
+.retry-button {
+  height: 44px;
+  min-width: 120px;
+  padding: 0 16px;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 8px;
+}
+
+.retry-button:hover {
+  opacity: 0.95;
+}
+
+.retry-button:active {
+  transform: scale(0.99);
+}
+
+.retry-button:focus-visible {
+  outline: 2px solid rgba(79, 70, 229, 0.85);
+  outline-offset: 3px;
+}
+
+/* Similar jobs */
+.similar-jobs-text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ✅ Flex fallback */
+.similar-jobs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ✅ Use grid when supported (cleaner) */
+@supports (display: grid) {
+  .similar-jobs-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* =========================================================
+   ✅ Responsive breakpoints
+   Mobile: <= 576px
+   Tablet: 577px - 768px
+   Laptop: 769px - 1024px
+   Desktop: >= 1025px
+   ========================================================= */
+
+/* Mobile */
+@media (max-width: 576px) {
+  .jobs-details-container {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .failure-text {
+    font-size: 20px;
+  }
+
+  .reason {
+    font-size: 14px;
+  }
+
+  .retry-button {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  @supports (display: grid) {
+    .similar-jobs-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+  .jobs-details-container {
+    padding: 20px;
+  }
+
+  .failure-text {
+    font-size: 22px;
+  }
+
+  @supports (display: grid) {
+    .similar-jobs-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .jobs-details-container {
+    padding: 24px;
+  }
+
+  @supports (display: grid) {
+    .similar-jobs-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .jobs-details-container {
+    padding: 30px;
+  }
+
+  @supports (display: grid) {
+    .similar-jobs-container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

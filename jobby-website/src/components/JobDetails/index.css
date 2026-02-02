@@ -1,0 +1,338 @@
+/* ✅ Cross-browser baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.job-details-list-container {
+  list-style-type: none;
+  background-color: #2c364c;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+
+  /* ✅ Instead of hiding everything (can clip focus outlines) */
+  overflow-x: hidden;
+}
+
+/* Top: logo + title */
+.title-logo-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.image-style {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.jobs-title {
+  color: #ffffff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0;
+
+  /* ✅ Better text overflow behavior */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Location/type + salary row */
+.location-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+@media (max-width: 576px) {
+  .location-text-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 576px) {
+  .similar-jobs-container {
+    flex-direction: column;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.text {
+  color: #e2e8f0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.salary-text {
+  color: #f8fafc;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+
+  /* ✅ Avoid overflow on small screens */
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 18px 0;
+}
+
+/* Icons consistent */
+.container svg {
+  width: 18px;
+  height: 18px;
+  color: #f1f5f9;
+  flex-shrink: 0;
+}
+
+/* Visit button (scoped to this card only) */
+.job-details-list-container button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.job-details-list-container button:focus {
+  outline: none;
+}
+
+.job-details-list-container button:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.8);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.comapny-visit-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.visit-text {
+  color: #6366f1;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+}
+
+.job-details-list-container button:hover .visit-text {
+  text-decoration: underline;
+}
+
+/* Section titles */
+.description-text {
+  color: #ffffff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 14px 0 8px 0;
+}
+
+/* ✅ Skills layout */
+.skills-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 18px 0;
+
+  /* fallback */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Use grid when supported */
+@supports (display: grid) {
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+.skills-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+
+  /* ✅ FIX: better flex fallback sizing (prevents overflow) */
+  flex: 1 1 calc(33.333% - 16px);
+}
+
+@supports (display: grid) {
+  .skills-logo-container {
+    flex: initial;
+  }
+}
+
+.skills-logo-container img {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Life at company */
+.life-at-company-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 10px;
+
+  /* ✅ allows wrapping if space is tight */
+  flex-wrap: wrap;
+}
+
+.life-at-company-container img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 14px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* ✅ Mobile */
+@media (max-width: 576px) {
+  .job-details-list-container {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .image-style {
+    width: 48px;
+    height: 48px;
+  }
+
+  .jobs-title {
+    font-size: 18px;
+  }
+
+  .salary-text {
+    width: 100%;
+    white-space: normal; /* ✅ allow wrap */
+  }
+
+  @supports (display: grid) {
+    .skills-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .skills-logo-container {
+    flex: 1 1 calc(50% - 16px); /* ✅ FIX */
+  }
+
+  .life-at-company-container {
+    flex-direction: column;
+  }
+
+  .life-at-company-container img {
+    width: 100%;
+  }
+}
+
+/* ✅ Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+  .job-details-list-container {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .jobs-title {
+    font-size: 19px;
+  }
+
+  @supports (display: grid) {
+    .skills-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .skills-logo-container {
+    flex: 1 1 calc(50% - 16px); /* ✅ FIX */
+  }
+
+  .life-at-company-container {
+    flex-direction: column;
+  }
+
+  .life-at-company-container img {
+    width: 100%;
+  }
+}
+
+/* ✅ Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .job-details-list-container {
+    padding: 20px;
+  }
+
+  .jobs-title {
+    font-size: 21px;
+  }
+
+  @supports (display: grid) {
+    .skills-container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .skills-logo-container {
+    flex: 1 1 calc(33.333% - 16px); /* ✅ FIX */
+  }
+
+  .life-at-company-container img {
+    width: 280px; /* ✅ slightly smaller to avoid squeezing text */
+  }
+}
+
+/* ✅ Desktop */
+@media (min-width: 1025px) {
+  .job-details-list-container {
+    padding: 24px;
+  }
+
+  .jobs-title {
+    font-size: 22px;
+  }
+
+  @supports (display: grid) {
+    .skills-container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

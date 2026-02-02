@@ -1,0 +1,147 @@
+/* ✅ Cross-browser baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.home-container {
+  background-image: url("https://assets.ccbp.in/frontend/react-js/home-lg-bg.png");
+  min-height: 100vh; /* better than fixed height */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+/* Text wrapper */
+.home-text-container {
+  width: 100%;
+  max-width: 720px; /* nice readable width */
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Heading */
+.home-text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  color: #f8fafc;
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 12px 0;
+}
+
+/* Paragraph */
+.home-paragraph {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  color: #f8fafc;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  max-width: 520px;
+}
+
+/* Button */
+.find-jobs {
+  height: 44px;
+  min-width: 140px;
+  padding: 0 18px;
+
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 10px;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.find-jobs:hover {
+  opacity: 0.95;
+}
+
+.find-jobs:active {
+  transform: scale(0.99);
+}
+
+.find-jobs:focus-visible {
+  outline: 2px solid rgba(79, 70, 229, 0.9);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   ✅ Responsive breakpoints
+   Mobile: <= 576px
+   Tablet: 577px - 768px
+   Laptop: 769px - 1024px
+   Desktop: >= 1025px
+   ========================================================= */
+
+/* ✅ Mobile */
+@media (max-width: 576px) {
+  .home-container {
+    padding: 16px;
+    background-image: url("https://assets.ccbp.in/frontend/react-js/home-sm-bg.png");
+  }
+
+  .home-text {
+    font-size: 28px;
+  }
+
+  .home-paragraph {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .find-jobs {
+    height: 42px;
+    font-size: 15px;
+    min-width: 120px;
+  }
+}
+
+/* ✅ Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+  .home-text {
+    font-size: 36px;
+  }
+
+  .home-paragraph {
+    font-size: 16px;
+  }
+}
+
+/* ✅ Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-text {
+    font-size: 44px;
+  }
+
+  .home-text-container {
+    max-width: 780px;
+  }
+}
+
+/* ✅ Desktop */
+@media (min-width: 1025px) {
+  .home-text {
+    font-size: 54px;
+  }
+
+  .home-text-container {
+    max-width: 820px;
+  }
+}

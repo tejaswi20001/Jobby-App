@@ -1,0 +1,66 @@
+.similar-jobs-list-container {
+  list-style-type: none;
+  background-color: #272727;
+  border-radius: 16px;
+  padding: 28px;
+  width: 480px;
+  height: 560px;
+  box-sizing: border-box;
+  margin: 30px;
+}
+
+.title-logo-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.image-style {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+.jobs-title {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0;
+}
+.description-text {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 28px;
+  margin: 14px 0 8px 0;
+}
+.text {
+  color: #e2e8f0;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+.location-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.salary-text {
+  color: #f8fafc;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 25px;
+  margin: 0;
+}

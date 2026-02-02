@@ -1,0 +1,86 @@
+/* ✅ Cross-browser baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page-not-found-container {
+  background-color: #000000;
+  min-height: 100vh; /* ✅ correct */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+/* Responsive image */
+.not-found-image {
+  width: min(450px, 100%);
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Title */
+.page-not-found-text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+  margin: 16px 0 8px 0;
+}
+
+/* Subtitle / paragraph */
+.paragraph {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f1f5f9;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* ==========================
+   ✅ Responsive breakpoints
+   ========================== */
+
+/* Mobile */
+@media (max-width: 576px) {
+  .page-not-found-container {
+    padding: 16px;
+  }
+
+  .page-not-found-text {
+    font-size: 20px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+  .page-not-found-text {
+    font-size: 24px;
+  }
+
+  .paragraph {
+    font-size: 15px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .page-not-found-text {
+    font-size: 30px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+}
