@@ -4,6 +4,18 @@ Jobby App is a React-based job search platform that allows users to authenticate
 
 ---
 
+## 🌐 Live Demo Link
+
+- Live Site: https://jobby-application-self.vercel.app/login
+- GitHub Repo: https://github.com/tejaswi20001/Jobby-App.git
+
+### ## 🔑 Test Credentials
+
+Use these credentials to log in:
+
+Username: rahul
+Password: rahul@2021
+
 ## 🚀 Features
 
 ### 🔐 Authentication (Login Route)
@@ -14,12 +26,9 @@ Jobby App is a React-based job search platform that allows users to authenticate
 - Redirects unauthenticated users to Login when accessing protected routes
 - Logout clears authentication and redirects to Login
 
-### Test Credentials
-
-Username: rahul
-Password: rahul@2021
-
 ---
+
+### Added images in assets/
 
 ### 🏠 Home Page
 
@@ -57,5 +66,23 @@ Password: rahul@2021
 **Example API request with multiple filters applied:**
 
 ```js
-https://apis.ccbp.in/jobs?employment_type=FULLTIME,PARTTIME&minimum_package=1000000&search=
+https://apis.ccbp.in/jobs
+
+Folder Structure
+
+src/
+ ├─ components/
+ │   ├─ Login/
+ │   ├─ Home/
+ │   ├─ Jobs/
+ │   ├─ JobItemDetails/
+ │   ├─ Header/
+ │   └─ NotFound/
+ ├─ App.js
+ ├─ index.js
+ └─ index.css
+public/
+ ├─ index.html
+ └─ favicon.ico
+
 ```
