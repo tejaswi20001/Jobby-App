@@ -162,3 +162,81 @@
     max-width: 600px; /* if you want bigger on desktop */
   }
 }
+
+/* Demo Credentials Card */
+.demo-credentials-card {
+  margin-top: 18px;
+  width: 100%;
+  background: #0f172a; /* deep navy */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 14px;
+  box-sizing: border-box;
+}
+
+.demo-title {
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.demo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.demo-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.demo-value {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.demo-note {
+  margin: 10px 0 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Responsive improvements */
+@media (min-width: 768px) {
+  .demo-credentials-card {
+    padding: 16px 18px;
+    border-radius: 14px;
+  }
+
+  .demo-title {
+    font-size: 15px;
+  }
+
+  .demo-label,
+  .demo-value {
+    font-size: 14px;
+  }
+
+  .demo-note {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .demo-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

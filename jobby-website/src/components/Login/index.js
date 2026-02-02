@@ -92,6 +92,27 @@ class Login extends Component {
             <p className="error-msg">*Username and Password didn`t match</p>
           )}
         </form>
+        {/* Demo Credentials Box */}
+        <div className="demo-credentials-card">
+          <p className="demo-title">
+            Test Credentials (Provided by NxtWave API)
+          </p>
+
+          <div className="demo-row">
+            <span className="demo-label">Username:</span>
+            <span className="demo-value">rahul</span>
+          </div>
+
+          <div className="demo-row">
+            <span className="demo-label">Password:</span>
+            <span className="demo-value">*****</span>
+          </div>
+
+          <p className="demo-note">
+            This project demonstrates authentication, authorization, and
+            protected routes using a third-party API.
+          </p>
+        </div>
       </div>
     );
   }
