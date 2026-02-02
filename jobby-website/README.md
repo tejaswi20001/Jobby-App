@@ -16,6 +16,14 @@ Use these credentials to log in:
 Username: rahul
 Password: rahul@2021
 
+## 📸 Screenshots
+
+### Added images in assets/
+
+[Home](jobby-website/assets/home-bg-img.png)
+[Failure View](jobby-website/assets/failure-view.png)
+[No Jobs Found](jobby-website/assets/no-jobs-found-image.png)
+
 ## 🚀 Features
 
 ### 🔐 Authentication (Login Route)
@@ -27,8 +35,6 @@ Password: rahul@2021
 - Logout clears authentication and redirects to Login
 
 ---
-
-### Added images in assets/
 
 ### 🏠 Home Page
 
