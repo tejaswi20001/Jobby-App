@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Jobby App 💼
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Jobby App is a React-based job search platform that allows users to authenticate, search for jobs using multiple filters, and view detailed job information through protected routes with a clean and responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### 🔐 Authentication (Login Route)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- User login with JWT-based authentication
+- Displays error message for invalid credentials
+- Redirects authenticated users away from the Login page
+- Redirects unauthenticated users to Login when accessing protected routes
+- Logout clears authentication and redirects to Login
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Test Credentials
 
-### `npm test`
+Username: rahul
+Password: rahul@2021
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 🏠 Home Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Accessible only to authenticated users
+- “Find Jobs” button navigates to the Jobs page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 💼 Jobs Page
 
-### `npm run eject`
+- Fetches and displays user profile details
+- Displays loader while fetching profile data
+- Displays failure view with retry option on API failure
+- Fetches jobs list with the following query parameters:
+  - `employment_type`
+  - `minimum_package`
+  - `search`
+- Displays loader while fetching jobs data
+- Supports the following filters:
+  - Search by job title
+  - Employment type (Full Time, Part Time, etc.)
+  - Salary range
+- Supports **multiple filters applied together**
+- Displays:
+  - Jobs list on success
+  - No Jobs Found view when results are empty
+  - Failure view with retry option on API failure
+- Navigates to Job Details page when a job card is clicked
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Job Details Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Fetches job details using job ID from the API
+- Displays: Job description, Skills required, Life at company section, List of similar jobs, Shows loader while fetching jobdetails, Displays failure view with retry option on API failure, and “Visit” button opens the company website in a new tab.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Example API request with multiple filters applied:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+https://apis.ccbp.in/jobs?employment_type=FULLTIME,PARTTIME&minimum_package=1000000&search=
+```
