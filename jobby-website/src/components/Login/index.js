@@ -105,7 +105,7 @@ class Login extends Component {
 
           <div className="demo-row">
             <span className="demo-label">Password:</span>
-            <span className="demo-value">*****</span>
+            <span className="demo-value">rahul@2021</span>
           </div>
 
           <p className="demo-note">

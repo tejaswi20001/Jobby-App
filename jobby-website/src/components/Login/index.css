@@ -11,6 +11,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 24px; /* prevents edge touching on mobile */
 }
@@ -164,21 +165,28 @@
 }
 
 /* Demo Credentials Card */
+./* ===== Demo Credentials Card (Bigger + Better width) ===== */
 .demo-credentials-card {
-  margin-top: 18px;
+  margin-top: 22px;
+
+  /* background size / layout */
   width: 100%;
-  background: #0f172a; /* deep navy */
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 14px 14px;
+  max-width: 620px; /* reduces the long full-width look */
+  margin-left: auto;
+  margin-right: auto;
+
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 18px 18px; /* more padding = better background size */
   box-sizing: border-box;
 }
 
 .demo-title {
-  margin: 0 0 10px 0;
+  margin: 0 0 14px 0;
   color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 18px; /* increased */
+  font-weight: 700;
   line-height: 1.3;
 }
 
@@ -186,51 +194,57 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 8px 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-  margin-bottom: 8px;
+  gap: 14px;
+
+  padding: 12px 14px; /* increased */
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  margin-bottom: 12px; /* increased spacing */
 }
 
 .demo-label {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 13px;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px; /* increased */
+  font-weight: 600;
 }
 
 .demo-value {
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 16px; /* increased */
+  font-weight: 700;
   letter-spacing: 0.2px;
 }
 
 .demo-note {
-  margin: 10px 0 0 0;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 12px;
-  line-height: 1.5;
+  margin: 14px 0 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px; /* increased */
+  line-height: 1.6;
 }
 
-/* Responsive improvements */
+/* Responsive */
 @media (min-width: 768px) {
   .demo-credentials-card {
-    padding: 16px 18px;
-    border-radius: 14px;
+    max-width: 720px; /* slightly wider on desktop */
+    padding: 22px 22px;
+    border-radius: 16px;
   }
 
   .demo-title {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .demo-label,
   .demo-value {
-    font-size: 14px;
+    font-size: 19px;
+    color: #ffffff;
+    font-weight: 500;
   }
 
   .demo-note {
-    font-size: 13px;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
   }
 }
 
