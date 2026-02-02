@@ -4,30 +4,35 @@ Jobby App is a React-based job search platform that allows users to authenticate
 
 ---
 
-## 🌐 Live Demo Link
+## 🌐 Live Demo
 
-- Live Site: https://jobby-application-self.vercel.app/login
-- GitHub Repo: https://github.com/tejaswi20001/Jobby-App.git
+- **Live Site:** https://jobby-application-self.vercel.app/login
+- **GitHub Repo:** https://github.com/tejaswi20001/Jobby-App
 
-### ## 🔑 Test Credentials
+---
+
+## 🔑 Test Credentials
 
 Use these credentials to log in:
 
+````txt
 Username: rahul
 Password: rahul@2021
 
+
 ## 📸 Screenshots
 
-### Added images in assets/
+### Application Screens (from assets)
 
-[Home](jobby-website/assets/home-bg-img.png)
-[Failure View](jobby-website/assets/failure-view.png)
-[No Jobs Found](jobby-website/assets/no-jobs-found-image.png)
+![Home Page](jobby-website/assets/home-bg-img.png)
+![Failure View](jobby-website/assets/failure-view.png)
+![No Jobs Found](jobby-website/assets/no-jobs-found-image.png)
+
+---
 
 ## 🚀 Features
 
 ### 🔐 Authentication (Login Route)
-
 - User login with JWT-based authentication
 - Displays error message for invalid credentials
 - Redirects authenticated users away from the Login page
@@ -37,22 +42,19 @@ Password: rahul@2021
 ---
 
 ### 🏠 Home Page
-
 - Accessible only to authenticated users
 - “Find Jobs” button navigates to the Jobs page
 
 ---
 
 ### 💼 Jobs Page
-
 - Fetches and displays user profile details
 - Displays loader while fetching profile data
 - Displays failure view with retry option on API failure
-- Fetches jobs list with the following query parameters:
+- Fetches jobs list using query parameters:
   - `employment_type`
   - `minimum_package`
   - `search`
-- Displays loader while fetching jobs data
 - Supports the following filters:
   - Search by job title
   - Employment type (Full Time, Part Time, etc.)
@@ -61,20 +63,27 @@ Password: rahul@2021
 - Displays:
   - Jobs list on success
   - No Jobs Found view when results are empty
-  - Failure view with retry option on API failure
+  - Failure view with retry option
 - Navigates to Job Details page when a job card is clicked
 
-### Job Details Page
+---
 
+### 📄 Job Details Page
 - Fetches job details using job ID from the API
-- Displays: Job description, Skills required, Life at company section, List of similar jobs, Shows loader while fetching jobdetails, Displays failure view with retry option on API failure, and “Visit” button opens the company website in a new tab.
+- Displays:
+  - Job description
+  - Skills required
+  - Life at company section
+  - Similar jobs list
+- Shows loader while fetching job details
+- Displays failure view with retry option on API failure
+- “Visit” button opens the company website in a new tab
+
+---
 
 **Example API request with multiple filters applied:**
-
 ```js
 https://apis.ccbp.in/jobs
-
-Folder Structure
 
 src/
  ├─ components/
@@ -91,4 +100,4 @@ public/
  ├─ index.html
  └─ favicon.ico
 
-```
+````
